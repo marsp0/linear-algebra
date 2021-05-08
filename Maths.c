@@ -45,15 +45,3 @@ void projection(float v1[MAX_DIMENSION], float v2[MAX_DIMENSION], float result[M
 	scale(v2, dotProduct/magnitude_sq, result, dimension);
 	return;
 }
-
-void clear_vector(float vec[MAX_DIMENSION]) {
-	for (int i = 0; i < MAX_DIMENSION; i++) {
-		vec[i] = 0.f;
-	}
-}
-
-void clear_vectors(float vectors[][MAX_DIMENSION]) {
-	for (int i = 0; i < MAX_DIMENSION; i++) {
-		clear_vector(vectors[i]);
-	}
-}

@@ -5,10 +5,8 @@
 int main(int argc, char const *argv[])
 {
 	int dimension;
-	float input[MAX_DIMENSION][MAX_DIMENSION];
-	clear_vectors(input);
-	float output[MAX_DIMENSION][MAX_DIMENSION];
-	clear_vectors(output);
+	float input[MAX_DIMENSION][MAX_DIMENSION] = {};
+	float output[MAX_DIMENSION][MAX_DIMENSION] = {};
 	printf("Vector space dimension (2-10): ");
     if (scanf("%d", &dimension) != 1 || dimension > 10 || dimension < 2)
     {
