@@ -10,7 +10,7 @@ CXXFLAGS      	:= -std=c11 ${FLAGS.${type}}
 SRCFILES	 	:= $(shell find $(SRCDIR) -name "*.c")
 SRCNAMES		:= $(notdir $(SRCFILES))
 OBJFILES 	    := $(SRCNAMES:%.c=$(OBJDIR)/%.o)
-LDFLAGS       	:= -lX11 -lXi -lSDL2
+LDFLAGS       	:= 
 space :=
 VPATH := $(subst $(space),:,$(shell find . -type d))
 
