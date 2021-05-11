@@ -3,5 +3,5 @@
 Mini project containing stuff related to linear algebra
 - Gram-Schmidt orthogonalization
 - Linear System Solver
-- Matrix Inversion
-- Change of Basis derivation
+- Matrix Inversion (Not done)
+- Change of Basis derivation (Not done)
