@@ -1,21 +1,20 @@
 # https://en.wikipedia.org/wiki/Makefile
 
-CXX         	:= gcc
-SRCDIR 			:= .
+CXX 			:= gcc
+SRCDIR			:= .
 OBJDIR			:= ./out
-EXECUTABLE    	:= gram
-type		 	:= 
+EXECUTABLE		:= gram
+type			:= 
 FLAGS.leak 		:= -fsanitize=address
-CXXFLAGS      	:= -std=c11 ${FLAGS.${type}} 
+CXXFLAGS		:= -std=c11 ${FLAGS.${type}} 
 SRCFILES	 	:= $(shell find $(SRCDIR) -name "*.c")
 SRCNAMES		:= $(notdir $(SRCFILES))
-OBJFILES 	    := $(SRCNAMES:%.c=$(OBJDIR)/%.o)
-LDFLAGS       	:= 
-space :=
-VPATH := $(subst $(space),:,$(shell find . -type d))
+OBJFILES		:= $(SRCNAMES:%.c=$(OBJDIR)/%.o)
+LDFLAGS			:= -lm
+space			:=
+VPATH			:= $(subst $(space),:,$(shell find . -type d))
 
 # MAIN
-
 .PHONY: all
 all: out/$(EXECUTABLE)
 
@@ -24,7 +23,6 @@ out/$(EXECUTABLE): $(OBJFILES)
 
 $(OBJDIR)/%.o: %.c
 	@$(CXX) -c -g $< -o $@ $(LDFLAGS) $(CXXFLAGS) && echo "[OK]  $@"
-
 
 # CLEAN
 .PHONY: clean
